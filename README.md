@@ -21,7 +21,7 @@ The EasyImageUpload Module is a JavaScript module designed to handle image uploa
 
 ### Prerequisites
 
-Before using the Image Upload Module, ensure you have the following prerequisites:
+Before using the EasyImageUpload, ensure you have the following prerequisites:
 
 - A working web application project.
 - Access to a server with endpoints to handle image uploads and deletions.
@@ -93,14 +93,14 @@ Before using the Image Upload Module, ensure you have the following prerequisite
 ## Usage
 To use the EasyImageUpload Module in your web application, follow these steps:
 
-1. Configure the Image Upload Module with your server's API URLs and headers. This should be done before any other operations. For example:
+1. Configure the EasyImageUpload with your server's API URLs and headers. This should be done before any other operations. For example:
 ```html
 <script>
     // Set your server's API URLs
     const postMediaUrl = 'https://your-server.com/upload'; // URL to handle image upload
     const delMediaUrl = 'https://your-server.com/delete'; // URL to handle image deletion
 
-    // Configure Image Upload Module
+    // Configure EasyImageUpload
     ImageUploadModule.setPostImageAPIURL(postMediaUrl);
     ImageUploadModule.setDeleteImageAPIURL(delMediaUrl);
 
@@ -114,7 +114,7 @@ To use the EasyImageUpload Module in your web application, follow these steps:
 </script>
 
 ```
-The Image Upload Module automatically handles image uploading and deletion. When the user clicks the "Add Image" button, the image upload modal will appear, and the user can select an image to upload. Uploaded images will be displayed as thumbnails. Users can also click on an uploaded image to view and manage the image details.
+The EasyImageUpload automatically handles image uploading and deletion. When the user clicks the "Add Image" button, the image upload modal will appear, and the user can select an image to upload. Uploaded images will be displayed as thumbnails. Users can also click on an uploaded image to view and manage the image details.
 
 2. The status of image uploading and deletion is displayed using a toast message at the bottom-right corner of the screen.
 3. You can access the selected image URL by attaching the `data-sel-img-url` attribute to the button that opens the image upload modal. The selected image URL will be set to this attribute when the user selects an uploaded image. For example:
@@ -172,7 +172,7 @@ ImageUploadModule.setPostImageHeaders(headers);
 ```
 - `headers` (required): An object containing custom headers to be sent with the image uploading API request.
 
-Note: The `setDeleteImageAPIURL`, `setPostImageAPIURL`, `setDeleteImageHeaders`, and `setPostImageHeaders` methods must be called before any image upload or deletion operations take place to ensure proper configuration of the Image Upload Module.
+Note: The `setDeleteImageAPIURL`, `setPostImageAPIURL`, `setDeleteImageHeaders`, and `setPostImageHeaders` methods must be called before any image upload or deletion operations take place to ensure proper configuration of the EasyImageUpload.
 
 ## Contributing
 If you find any issues or have suggestions for improvement, please feel free to contribute to this project by creating a pull request or raising an issue on the GitHub repository.
