@@ -180,7 +180,8 @@ Note: The `setDeleteImageAPIURL`, `setPostImageAPIURL`, `setDeleteImageHeaders`,
 If you find any issues or have suggestions for improvement, please feel free to contribute to this project by creating a pull request or raising an issue on the GitHub repository.
 
 ## License
-This project is licensed under the MIT License. You are free to use, modify, and distribute this code for personal and commercial use.
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute this code for personal and commercial use.
+
 
 
 
