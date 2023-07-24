@@ -10,7 +10,7 @@ The EasyImageUpload Module is a JavaScript module designed to handle image uploa
   - [Usage](#usage)
 - [API Documentation](#api-documentation)
   - [Methods](#methods)
-    - [`openUploadImageModal`](#openuploadimagemodal)
+    - [openUploadImageModal](#openuploadimagemodal)
     - [`imageEdit`](#imageedit)
     - [`setDeleteImageAPIURL`](#setdeleteimageapiurl)
     - [`setPostImageAPIURL`](#setpostimageapiurl)
