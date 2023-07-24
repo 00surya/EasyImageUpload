@@ -1,0 +1,136 @@
+
+.upload-box {
+    width: 100px;
+    height: 100px;
+    border-width: 2px;
+    border-color: black;
+    border-style: dashed solid;
+    border-radius: 10px;
+}
+
+#upload-icon {
+    margin: auto;
+    padding: auto;
+    padding-top: auto;
+}
+
+.user-image {
+    width: 100px;
+    height: 100px;    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    border-width: 0px;
+    border-style: dashed solid;
+    position: relative;
+    
+}
+
+.user-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+    pointer-events: none; 
+}
+
+.user-image:hover::before {
+    background-color: rgba(0, 0, 0, 0.527); 
+}
+
+.user-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 2px;
+}
+
+/* overlays css */
+
+.uploading-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+} 
+
+.prev-img {
+    width: 100%;
+    padding: 5px;
+}
+
+.prev-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.prev-img-info .d-flex{
+    width: 100%;    
+}
+
+.prev-img-info label {
+    font-weight: 500;
+    color: black;
+    width: 20%;
+    text-align: left !important;
+    flex-shrink: 0;
+}
+
+.pre-img-url {
+    max-width: 80%;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.pre-img-url a{
+    color: rgb(69, 69, 69);
+}
+
+.pre-img-url a:hover{
+    color: rgb(39, 39, 39);
+}
+
+/* Modal */
+
+#imageSeclectModal .modal-footer button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+/* ************************************** */
+
+.loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    margin:15px auto;
+    position: absolute;
+    color: #FFF;
+    box-sizing: border-box; 
+    animation: animloader 2s linear infinite;
+  }
+
+@keyframes animloader {
+0% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+}
+25% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 2px;
+}
+50% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 2px,  -38px 0 0 -2px;
+}
+75% {
+    box-shadow: 14px 0 0 2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+}
+100% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+}
+}
