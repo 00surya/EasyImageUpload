@@ -110,14 +110,17 @@
         const postMediaUrl = 'https://your-server.com/upload'; // URL to handle image upload
         const delMediaUrl = 'https://your-server.com/delete'; // URL to handle image deletion
 
-        EasyUploadModule.setPostImageAPIURL(postMediaUrl);
-        EasyUploadModule.setDeleteImageAPIURL(delMediaUrl);
-        
-        EasyUploadModule.setPostImageHeaders({
-                'Content-Type': 'application/json'
+        // Set custom headers for API requests
+        EasyImageUpload.setPostImageHeaders({
+            'Content-Type': 'application/json',
+            'template-id': templateId,
+            'X-CSRF-Token': csrf_token
         });
-        EasyUploadModule.setDeleteImageHeaders({
-                'Content-Type': 'application/json'
+        
+        EasyImageUpload.setDeleteImageHeaders({
+            'Content-Type': 'application/json',
+            'template-id': templateId,
+            'X-CSRF-Token': csrf_token            
         });
 
 

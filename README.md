@@ -112,12 +112,17 @@ To use the EasyImageUpload Module in your web application, follow these steps:
     ImageUploadModule.setDeleteImageAPIURL(delMediaUrl);
 
     // Set custom headers for API requests
-    ImageUploadModule.setPostImageHeaders({
-        'Content-Type': 'application/json'
+    EasyImageUpload.setPostImageHeaders({
+        'Content-Type': 'application/json',
+        'template-id': templateId,
+        'X-CSRF-Token': csrf_token
     });
-    ImageUploadModule.setDeleteImageHeaders({
-        'Content-Type': 'application/json'
+    EasyImageUpload.setDeleteImageHeaders({
+        'Content-Type': 'application/json',
+        'template-id': templateId,
+        'X-CSRF-Token': csrf_token            
     });
+
 </script>
 
 ```
@@ -187,6 +192,41 @@ ImageUploadModule.setDeleteImageHeaders(headers);
 ImageUploadModule.setPostImageHeaders(headers);
 ```
 - `headers` (required): An object containing custom headers to be sent with the image uploading API request.
+
+API Response Format
+The image upload API is expected to respond in JSON format with the following structure:
+```html
+{
+  "status": true/false,
+  "image_url": "...",
+  "image_id": "2",
+  "msg": "..."
+}
+
+```
+
+Where:
+
+- `status` (boolean): Indicates the success or failure status of the image upload.
+- `image_url` (string): Contains the URL of the uploaded image (if successful).
+- `image_id` (string): Contains the ID of the uploaded image (if applicable).
+- `msg` (string): Contains a message related to the upload status.
+
+The image delete API is expected to respond in JSON format with the following structure:
+
+```html
+{
+  "status": true/false,
+  "msg": "..."
+}
+
+```
+
+Where:
+
+- `status` (boolean): Indicates the success or failure status of the image deletion.
+- `msg` (string): Contains a message related to the delete status.
+
 
 Note: The `setDeleteImageAPIURL`, `setPostImageAPIURL`, `setDeleteImageHeaders`, and `setPostImageHeaders` methods must be called before any image upload or deletion operations take place to ensure proper configuration of the EasyImageUpload.
 
