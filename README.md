@@ -193,6 +193,10 @@ ImageUploadModule.setPostImageHeaders(headers);
 ```
 - `headers` (required): An object containing custom headers to be sent with the image uploading API request.
 
+
+Note: The `setDeleteImageAPIURL`, `setPostImageAPIURL`, `setDeleteImageHeaders`, and `setPostImageHeaders` methods must be called before any image upload or deletion operations take place to ensure proper configuration of the EasyImageUpload.
+
+
 API Response Format
 The image upload API is expected to respond in JSON format with the following structure:
 ```html
@@ -228,7 +232,6 @@ Where:
 - `msg` (string): Contains a message related to the delete status.
 
 
-Note: The `setDeleteImageAPIURL`, `setPostImageAPIURL`, `setDeleteImageHeaders`, and `setPostImageHeaders` methods must be called before any image upload or deletion operations take place to ensure proper configuration of the EasyImageUpload.
 
 ## Contributing
 If you find any issues or have suggestions for improvement, please feel free to contribute to this project by creating a pull request or raising an issue on the GitHub repository.
