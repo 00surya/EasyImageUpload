@@ -111,18 +111,21 @@ To use the EasyImageUpload Module in your web application, follow these steps:
     ImageUploadModule.setPostImageAPIURL(postMediaUrl);
     ImageUploadModule.setDeleteImageAPIURL(delMediaUrl);
 
+
     // Set custom headers for API requests
     EasyImageUpload.setPostImageHeaders({
         'Content-Type': 'application/json',
-        'template-id': templateId,
-        'X-CSRF-Token': csrf_token
-    });
-    EasyImageUpload.setDeleteImageHeaders({
-        'Content-Type': 'application/json',
-        'template-id': templateId,
-        'X-CSRF-Token': csrf_token            
+        'img-data': img-data,
+        'CSRF-Token': csrf_token
     });
 
+    EasyImageUpload.setDeleteImageHeaders({
+        'Content-Type': 'application/json',
+        'image-id': imageId,
+        'CSRF-Token': csrf_token            
+    });
+
+    
 </script>
 
 ```

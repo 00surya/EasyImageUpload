@@ -113,14 +113,14 @@
         // Set custom headers for API requests
         EasyImageUpload.setPostImageHeaders({
             'Content-Type': 'application/json',
-            'template-id': templateId,
-            'X-CSRF-Token': csrf_token
+            'img-data': img-data,
+            'CSRF-Token': csrf_token
         });
-        
+
         EasyImageUpload.setDeleteImageHeaders({
             'Content-Type': 'application/json',
-            'template-id': templateId,
-            'X-CSRF-Token': csrf_token            
+            'image-id': imageId,
+            'CSRF-Token': csrf_token            
         });
 
 
