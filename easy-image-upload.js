@@ -1,7 +1,7 @@
 // Upload Image api should respond Image URL and Image Id
 // keys => image_url and image_id
 
-const EasyUploadModule = (() => {
+const EasyImageUpload = (() => {
 
     let imageUploadModal;
     let imageSeclectModal;
@@ -27,7 +27,7 @@ const EasyUploadModule = (() => {
         imageDivElement.style.position = 'relative';
         const imgElement = document.createElement('img');
         imgElement.src = image_url;
-        imgElement.setAttribute('onclick', 'EasyUploadModule.imageEdit(this)');
+        imgElement.setAttribute('onclick', 'EasyImageUpload.imageEdit(this)');
         imgElement.alt = '';
         imageDivElement.appendChild(imgElement);
 
