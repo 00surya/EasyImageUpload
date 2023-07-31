@@ -33,7 +33,7 @@ Before using the EasyImageUpload, ensure you have the following prerequisites:
 ```html
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="easy-image-upload.css">
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -41,7 +41,7 @@ Before using the EasyImageUpload, ensure you have the following prerequisites:
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-    <script src="image-upload.js"></script>
+    <script src="easy-image-upload.css.js"></script>
 ```
 
 2. Ensure your web application has a div container element for the image upload modal:
@@ -61,7 +61,7 @@ Before using the EasyImageUpload, ensure you have the following prerequisites:
 <!-- Button to open Modal -->
 <div class="mx-5 my-5">
 
-    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="EasyUploadModule.openUploadImageModal(this)">
+    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="EasyImageUpload.openUploadImageModal(this)">
         Choose image    
         <i class="fa fa-file-image-o mx-1" aria-hidden="true"></i>
     </button>
@@ -108,8 +108,8 @@ To use the EasyImageUpload Module in your web application, follow these steps:
     const delMediaUrl = 'https://your-server.com/delete'; // URL to handle image deletion
 
     // Configure EasyImageUpload
-    ImageUploadModule.setPostImageAPIURL(postMediaUrl);
-    ImageUploadModule.setDeleteImageAPIURL(delMediaUrl);
+    EasyImageUpload.setPostImageAPIURL(postMediaUrl);
+    EasyImageUpload.setDeleteImageAPIURL(delMediaUrl);
 
 
     // Set custom headers for API requests
@@ -135,7 +135,7 @@ The EasyImageUpload automatically handles image uploading and deletion. When the
 3. You can access the selected image URL by attaching the `data-sel-img-url` attribute to the button that opens the image upload modal. The selected image URL will be set to this attribute when the user selects an uploaded image. For example:
 ```html
 <!-- Button to open Modal with image URL attribute -->
-<button type="button" class="btn btn-outline-secondary btn-sm" onclick="EasyUploadModule.openUploadImageModal(this"
+<button type="button" class="btn btn-outline-secondary btn-sm" onclick="EasyImageUpload.openUploadImageModal(this"
 data-sel-img-url="">
     Choose image    
     <i class="fa fa-file-image-o mx-1" aria-hidden="true"></i>
@@ -159,7 +159,7 @@ To programmatically handle image selection and deletion, you can use the followi
 `openUploadImageModal`
 Opens the image upload modal when called. This function is triggered when the "Add Image" button is clicked.
 ```html
-ImageUploadModule.openUploadImageModal(clickedBtn);
+EasyImageUpload.openUploadImageModal(clickedBtn);
 ```
 - `clickedBtn`(required): The button element that triggered the image upload modal.
 - 
@@ -167,18 +167,18 @@ ImageUploadModule.openUploadImageModal(clickedBtn);
 Opens the image selection modal with image details. This function is triggered when the user clicks on an uploaded image thumbnail.
 
 ```html
-ImageUploadModule.imageEdit(imageElem);
+EasyImageUpload.imageEdit(imageElem);
 ```
 - `imageElem` (required): The image element that was clicked by the user.
   `setDeleteImageAPIURL`
   Sets the URL for handling image deletion on the server.
 ```html
-ImageUploadModule.setDeleteImageAPIURL(url);
+EasyImageUpload.setDeleteImageAPIURL(url);
 ```
 - `url` (required): The URL to handle image deletion on the server.
   `setPostImageAPIURL`
 ```html
-ImageUploadModule.setPostImageAPIURL(url);
+EasyImageUpload.setPostImageAPIURL(url);
 ```
 - `url` (required): The URL to handle image uploading on the server.
 `setDeleteImageHeaders`
@@ -186,14 +186,14 @@ ImageUploadModule.setPostImageAPIURL(url);
 Sets custom headers for the image deletion API request.
 
 ```html
-ImageUploadModule.setDeleteImageHeaders(headers);
+EasyImageUpload.setDeleteImageHeaders(headers);
 ```
 - `headers` (required): An object containing custom headers to be sent with the image deletion API request.
   `setPostImageHeaders`
   Sets custom headers for the image uploading API request.
 
 ```html
-ImageUploadModule.setPostImageHeaders(headers);
+EasyImageUpload.setPostImageHeaders(headers);
 ```
 - `headers` (required): An object containing custom headers to be sent with the image uploading API request.
 
