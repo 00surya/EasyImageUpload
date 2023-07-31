@@ -1,6 +1,6 @@
 # EasyImageUpload Module Documentation
 
-The EasyImageUpload Module is a JavaScript module designed to handle image uploads, previews, editing, and deletion in a web application. It provides a simple and easy-to-use interface to allow users to upload and manage images effectively.
+The EasyImageUpload Module is a light-weight JavaScript module designed to handle image uploads, previews, editing, and deletion in a web application. It provides a simple and easy-to-use interface to allow users to upload and manage images effectively.
 
 
 ## Table of Contents
@@ -59,9 +59,16 @@ Before using the EasyImageUpload, ensure you have the following prerequisites:
 
 ```html
 <!-- Button to open Modal -->
-<button type="button" class="btn btn-outline-success" onclick="ImageUploadModule.openUploadImageModal(this)">
-    <i class="fa fa-plus" aria-hidden="true"></i> Add Image 1
-</button>
+<div class="mx-5 my-5">
+
+    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="EasyUploadModule.openUploadImageModal(this)">
+        Choose image    
+        <i class="fa fa-file-image-o mx-1" aria-hidden="true"></i>
+    </button>
+    <span class="es-im-up-status mx-2" style="color:gray;">
+        No image chosen
+    </span>
+</div>
 ```
 4. Create a div container element for the image selection modal:
 ```html
