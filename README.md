@@ -125,7 +125,7 @@ To use the EasyImageUpload Module in your web application, follow these steps:
         'CSRF-Token': csrf_token            
     });
 
-    
+
 </script>
 
 ```
@@ -135,9 +135,10 @@ The EasyImageUpload automatically handles image uploading and deletion. When the
 3. You can access the selected image URL by attaching the `data-sel-img-url` attribute to the button that opens the image upload modal. The selected image URL will be set to this attribute when the user selects an uploaded image. For example:
 ```html
 <!-- Button to open Modal with image URL attribute -->
-<button type="button" class="btn btn-outline-success" onclick="ImageUploadModule.openUploadImageModal(this)"
-    data-sel-img-url="">
-    <i class="fa fa-plus" aria-hidden="true"></i> Add Image 1
+<button type="button" class="btn btn-outline-secondary btn-sm" onclick="EasyUploadModule.openUploadImageModal(this"
+data-sel-img-url="">
+    Choose image    
+    <i class="fa fa-file-image-o mx-1" aria-hidden="true"></i>
 </button>
 ```
 To programmatically handle image selection and deletion, you can use the following JavaScript functions:
