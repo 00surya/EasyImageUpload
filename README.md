@@ -136,6 +136,15 @@ To programmatically handle image selection and deletion, you can use the followi
 - `openUploadImageModal`: Opens the image upload modal when called. This function is triggered when the "Add Image" button is clicked.
 - `imageEdit`: Opens the image selection modal with image details. This function is triggered when the user clicks on an uploaded image thumbnail.
 
+## Screenshots
+
+![Screenshot 1](screenshots/ss1.png)
+![Screenshot 1](screenshots/ss2.png)
+![Screenshot 1](screenshots/ss3.png)
+![Screenshot 1](screenshots/ss4.png)
+![Screenshot 1](screenshots/ss5.png)
+
+
 # API Documentation
 ## Methods
 `openUploadImageModal`
