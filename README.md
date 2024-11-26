@@ -8,6 +8,7 @@ The EasyImageUpload Module is a light-weight JavaScript module designed to handl
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Testing](#testing)
 - [API Documentation](#api-documentation)
   - [Methods](#methods)
     - `openUploadImageModal`
@@ -145,7 +146,7 @@ To programmatically handle image selection and deletion, you can use the followi
 - `openUploadImageModal`: Opens the image upload modal when called. This function is triggered when the "Add Image" button is clicked.
 - `imageEdit`: Opens the image selection modal with image details. This function is triggered when the user clicks on an uploaded image thumbnail.
 
-## Testing Locally
+## Testing
 
 To test EasyImageUpload locally, you can use the mock server included in the testing/ folder. This mock server simulates an image upload and deletion process for development purposes.
 
