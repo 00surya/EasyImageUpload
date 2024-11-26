@@ -1,0 +1,16 @@
+{
+    "name": "easyimageupload-testing",
+    "version": "1.0.0",
+    "description": "A mock server for testing EasyImageUpload",
+    "main": "mockServer.js",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "multer": "^1.4.4"
+    },
+    "scripts": {
+        "start": "node mockServer.js"
+    },
+    "author": "",
+    "license": "ISC"
+}
