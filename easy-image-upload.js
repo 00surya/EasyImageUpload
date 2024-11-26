@@ -158,7 +158,10 @@ const EasyImageUpload = (() => {
 
         const imageDelBtn = document.querySelectorAll('#imageSeclectModal .modal-footer button')[0];
         imageDelBtn.id = imageID.slice(2)
-        imageDelBtn.onclick = deleteImage;
+        imageDelBtn.onclick = function() {
+            deleteImage(imageID.slice(2), imageURL);
+        };
+        
 
         const imageInsertBtn = document.querySelectorAll('#imageSeclectModal .modal-footer button')[1];
         imageInsertBtn.onclick = insertImage;
@@ -266,11 +269,14 @@ const EasyImageUpload = (() => {
     }
 
 
-    function deleteImage() {
+    function deleteImage(imageID, imageURL) {
 
-        const imageID = this.id;
+
+        const imageExtension = imageURL.split('.').pop().split('?')[0];  // Get extension from URL
+        const imageIDWithExtension = `${imageID}.${imageExtension}`;
+
         this.innerText = 'Deleting...';
-
+        
         if (!deleteImageAPIURL) {
             const errorMessage = 'Post Image API URL is not provided!';
             showToast(errorMessage);
@@ -279,7 +285,7 @@ const EasyImageUpload = (() => {
 
         const templateId = '001';
         const imageInfo = {
-            image_id: imageID
+            image_id: imageIDWithExtension
         };
 
         const fetchOptions = {
