@@ -1,6 +1,2 @@
 # Ignore node_modules inside the testing directory
 testing/node_modules/
-
-# You can add other common exclusions, like:
-# Ignore the node_modules folder in the root directory (optional)
-node_modules/
