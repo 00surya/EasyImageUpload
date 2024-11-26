@@ -9,8 +9,8 @@ const EasyImageUpload = (() => {
 
     let deleteImageAPIURL;
     let postImageAPIURL;
-    let deleteImageHeaders;
-    let postImageHeaders;
+    let deleteImageHeaders = { "Content-Type": "application/json" };
+    let postImageHeaders = { "Content-Type": "application/json" };
 
 
     function showToast(message) {
@@ -20,6 +20,32 @@ const EasyImageUpload = (() => {
         toast.show();
     }
 
+    function ValideUrl(url) {
+        return url && (url.startsWith("http://") || url.startsWith("https://"));
+    }
+    
+
+    function init({ postImageAPI, deleteImageAPI, headers = {} }) {
+        console.log(postImageAPI, 'postImageAPI');
+        
+        // Validate URLs
+        if (!postImageAPI || !ValideUrl(postImageAPI)) {
+            throw new Error("Invalid postImageAPI URL. Ensure it starts with http:// or https:// and is non-empty.");
+        }
+        if (!deleteImageAPI || !ValideUrl(deleteImageAPI)) {
+            throw new Error("Invalid deleteImageAPI URL. Ensure it starts with http:// or https:// and is non-empty.");
+        }
+        
+        // Assign API URLs
+        postImageAPIURL = postImageAPI;
+        deleteImageAPIURL = deleteImageAPI;
+        
+        // Merge headers with defaults
+        const defaultHeaders = { "Content-Type": "application/json" };
+        postImageHeaders = { ...defaultHeaders, ...postImageHeaders, ...headers };
+        deleteImageHeaders = { ...defaultHeaders, ...deleteImageHeaders, ...headers };
+    }
+    
 
     function createImageContainer(image_url) {
         const imageDivElement = document.createElement('div');
@@ -35,13 +61,19 @@ const EasyImageUpload = (() => {
     }
 
     function openUploadImageModal(clickedBtn) {
-
-        currSelectedBtn = clickedBtn;
+        if((ValideUrl(postImageAPIURL)&&(ValideUrl))){
+            currSelectedBtn = clickedBtn;
         imageUploadModal = new bootstrap.Modal(document.getElementById('imageUploadModal'), {
             'responsive': true,
             'centered': true
         });
         imageUploadModal.show();
+            
+        }
+        else{
+            showToast("Can not Upload Image Error: Invalid API URLs");
+        }
+        
 
     }
 
@@ -361,6 +393,7 @@ const EasyImageUpload = (() => {
     })();
 
     return {
+        init,
         setDeleteImageAPIURL: function (url) {
             deleteImageAPIURL = url;
         },

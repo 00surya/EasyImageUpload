@@ -107,25 +107,27 @@
 
     <script>
 
-        const postMediaUrl = 'https://your-server.com/upload'; // URL to handle image upload
-        const delMediaUrl = 'https://your-server.com/delete'; // URL to handle image deletion
+        const postMediaUrl = 'http://127.0.0.1:5500/EasyImageUpload/example.html'; // URL to handle image upload
+        const delMediaUrl = 'http://127.0.0.1:5500/EasyImageUpload/example.html'; // URL to handle image deletion
 
         // Setting Endpoints
-        EasyImageUpload.setPostImageAPIURL(postMediaUrl);
-        EasyImageUpload.setDeleteImageAPIURL(delMediaUrl);
+        const csrf_token = "";
 
         // Set custom headers for API requests
-        EasyImageUpload.setPostImageHeaders({
-            'Content-Type': 'application/json',
-            'img-data': 'img-data',
-            'CSRF-Token': 'csrf_token'
-        });
-
-        EasyImageUpload.setDeleteImageHeaders({
-            'Content-Type': 'application/json',
-            'image-id': 'imageId',
-            'CSRF-Token': 'csrf_token'
-        });
+        try {
+            EasyImageUpload.init({
+                postImageAPI: postMediaUrl,
+                deleteImageAPI: delMediaUrl,
+                headers: {
+                    "Content-Type": "application/json",
+                    'CSRF-Token': 'csrf_token'
+                },
+            });
+    
+            // Call other methods like uploadImage and deleteImage as needed.
+        } catch (error) {
+            console.error(error.message);
+        }
 
 
     </script>
