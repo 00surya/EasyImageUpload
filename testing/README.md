@@ -17,9 +17,9 @@ To get started, you need to install the necessary dependencies for the mock serv
 
     - To check if `Node.js` is installed, run the following command in your terminal or command prompt:
 
-    ```bash
+        ```bash
         node -v
-    ```
+        ```
 
     - If Node.js is installed, you'll see a version number like v16.13.0. If you see an error or no version number, Node.js is not installed.
 
@@ -40,7 +40,7 @@ To get started, you need to install the necessary dependencies for the mock serv
 
 Once the dependencies are installed, you can start the mock server:
 
-    ```bash
+    ```
     node mockServer.js
     ```
 This will start a local server at http://localhost:3000 that simulates image upload and deletion endpoints.
