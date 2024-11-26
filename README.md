@@ -145,7 +145,63 @@ To programmatically handle image selection and deletion, you can use the followi
 - `openUploadImageModal`: Opens the image upload modal when called. This function is triggered when the "Add Image" button is clicked.
 - `imageEdit`: Opens the image selection modal with image details. This function is triggered when the user clicks on an uploaded image thumbnail.
 
+## Testing Locally
+
+To test EasyImageUpload locally, you can use the mock server included in the testing/ folder. This mock server simulates an image upload and deletion process for development purposes.
+
+### Steps to Test the Module Locally
+
+1. **Install Node.js** (if not already installed):
+
+    To run the mock server, you need to have Node.js installed on your machine. You can download and install it from the [official Node.js website](https://nodejs.org/).
+    
+    - To check if `Node.js` is installed, run the following command in your terminal or command prompt:
+
+    ```bash
+        node -v
+    ```
+
+    - If Node.js is installed, you'll see a version number like v16.13.0. If you see an error or no version number, Node.js is not installed.
+
+
+
+2. **Install dependencies**:
+    In the `testing/` folder, run the following command to install the necessary dependencies (Express, Multer):
+    
+    ```bash
+    npm install
+    ```
+
+3. **Start the mock server**:
+    In the `testing/` folder, run the following command to start the mock server:
+
+    ```bash
+    node mockServer.js
+    ```
+
+    The server will start on http://localhost:3000.
+
+4. **Configure the EasyImageUpload module**:
+    In your main HTML file, configure the EasyImageUpload module to use the local mock server for image upload and deletion by setting the URLs:
+
+    ```html
+    <script>
+    const postMediaUrl = 'http://localhost:3000/upload'; // Local mock upload URL
+    const delMediaUrl = 'http://localhost:3000/delete'; // Local mock delete URL
+
+    // Configure EasyImageUpload
+    EasyImageUpload.setPostImageAPIURL(postMediaUrl);
+    EasyImageUpload.setDeleteImageAPIURL(delMediaUrl);
+    </script>
+    ```
+
+5. **Test image upload and deletion**:
+    Once the mock server is running and the URLs are set, you can test uploading and deleting images using the EasyImageUpload functionality as described in the Usage section.
+
+
 ## Screenshots
+
+Here are some screenshots of the EasyImageUpload module in action:
 
 ![Screenshot 1](screenshots/ss1.png)
 ![Screenshot 1](screenshots/ss2.png)
