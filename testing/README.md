@@ -40,7 +40,7 @@ To get started, you need to install the necessary dependencies for the mock serv
 
 Once the dependencies are installed, you can start the mock server:
 
-    ```
+    ```bash
     node mockServer.js
     ```
 This will start a local server at http://localhost:3000 that simulates image upload and deletion endpoints.
